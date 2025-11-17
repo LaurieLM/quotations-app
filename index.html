@@ -14,18 +14,18 @@
     <h2>Gestionnaire de citations en ligne</h2>
     <h3>0 citations</h3>
     <hr>
-    <form class="citations-group" action="" method="get">
+    <form id="citations-group" action="" method="post">
         <label for="citationInput">Entrez une citation</label>
         <input type="text" name="citationInput" id="citation-input">
         <label for="authorInput">Entrez le nom de l'auteur ou autrice</label>
         <input type="text" name="authorInput" id="author-input">
-        <button id="citation-btn" type="submit">Soumettre</button>
+        <button id="citation-btn" type="button">Soumettre</button>
     </form>
 
     <div id="quote-list">
         <div class="quote">
-            <p id="text">On ne naît pas femme, on le devient.</p>
-            <p id="author">Simone de Beauvoir</p>
+            <p class="text">On ne naît pas femme, on le devient.</p>
+            <p class="author">Simone de Beauvoir</p>
         </div>
     </div>
 

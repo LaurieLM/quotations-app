@@ -19,7 +19,7 @@ h3 {
   font-size: 2vw;
 }
 
-.citations-group {
+#citations-group {
   display: flex;
   flex-direction: column;
   flex: 0.5;
@@ -46,11 +46,11 @@ input {
   border-radius: 7px;
 }
 
-#text {
+.text {
   font-size: 1.5vw;
   margin: 1vw 0 0 0;
 }
 
-#author {
+.author {
   margin: 1vw 0 0 0;
 }
