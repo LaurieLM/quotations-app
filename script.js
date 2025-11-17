@@ -19,7 +19,7 @@ function addQuote(quote, author) {
   citationDiv.appendChild(citationAuthor);
 }
 
-citationsBtn.addEventListener("click", () => {
+newCitation.addEventListener("submit", (event) => {
   event.preventDefault();
   const citationInput = document.querySelector("#citation-input");
   const authorInput = document.querySelector("#author-input");
