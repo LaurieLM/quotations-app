@@ -1,5 +1,12 @@
-const newCitation = document.querySelector("#citations-group");
+const citationGroup = document.querySelector("#citations-group");
 const citationsBtn = document.querySelector("#citation-btn");
+
+const citation = [
+  {
+    author: "Simone de Beauvoir",
+    text: "On ne naît pas femme, on le devient.",
+  },
+];
 
 let quoteCount = 0;
 
@@ -23,9 +30,17 @@ function addQuote(quote, author) {
 
   quoteCount += 1;
   count.innerText = quoteCount;
+
+  let newCitation = {
+    text: quote,
+    author: author,
+  };
+  citation.push(newCitation);
+
+  console.log(citation);
 }
 
-newCitation.addEventListener("submit", (event) => {
+citationGroup.addEventListener("submit", (event) => {
   event.preventDefault();
   const citationInput = document.querySelector("#citation-input");
   const authorInput = document.querySelector("#author-input");
