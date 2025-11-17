@@ -1,8 +1,11 @@
 const newCitation = document.querySelector("#citations-group");
 const citationsBtn = document.querySelector("#citation-btn");
 
+let quoteCount = 0;
+
 function addQuote(quote, author) {
   const quoteList = document.querySelector("#quote-list");
+  const count = document.getElementById("count");
 
   const citationText = document.createElement("p");
   citationText.className = "text";
@@ -17,6 +20,9 @@ function addQuote(quote, author) {
   quoteList.appendChild(citationDiv);
   citationDiv.appendChild(citationText);
   citationDiv.appendChild(citationAuthor);
+
+  quoteCount += 1;
+  count.innerText = quoteCount;
 }
 
 newCitation.addEventListener("submit", (event) => {
