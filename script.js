@@ -1,7 +1,7 @@
 const citationGroup = document.querySelector("#citations-group");
 const citationsBtn = document.querySelector("#citation-btn");
 
-const citation = [
+let citation = [
   {
     author: "Simone de Beauvoir",
     text: "On ne naît pas femme, on le devient.",
@@ -10,7 +10,18 @@ const citation = [
 
 let quoteCount = 0;
 
-function addQuote(quote, author) {
+let citationStorage = localStorage.getItem("citations");
+if (citationStorage !== null) {
+  citation = JSON.parse(citationStorage);
+} else {
+  console.log("Aucune donnée trouvée dans le localStorage.");
+}
+
+citation.forEach((element) => {
+  displayQuote(element.text, element.author);
+});
+
+function displayQuote(quote, author) {
   const quoteList = document.querySelector("#quote-list");
   const count = document.getElementById("count");
 
@@ -30,13 +41,17 @@ function addQuote(quote, author) {
 
   quoteCount += 1;
   count.innerText = quoteCount;
+}
 
+function addQuote(quote, author) {
   let newCitation = {
     text: quote,
     author: author,
   };
   citation.push(newCitation);
 
+  localStorage.setItem("citations", JSON.stringify(citation));
+  displayQuote(quote, author);
   console.log(citation);
 }
 
